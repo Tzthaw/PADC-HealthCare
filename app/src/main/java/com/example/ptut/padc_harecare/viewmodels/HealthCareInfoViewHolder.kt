@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.content_item.view.*
 class HealthCareInfoViewHolder(itemView: View,private val tapItem: TapItem): BaseViewHolder<HealthcareInfoItem>(itemView) {
     private var healthItem:HealthcareInfoItem?=null
     override fun setData(data: HealthcareInfoItem) {
+
         healthItem=data
         itemView.publishDate.text =data.publishedDate
         itemView.title.text =data.title.toString()
