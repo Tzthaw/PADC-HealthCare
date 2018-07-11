@@ -1,5 +1,6 @@
 package com.example.ptut.padc_harecare.mvp.presenter
 
+
 import android.arch.lifecycle.MutableLiveData
 import com.example.ptut.padc_harecare.deligate.TapItem
 import com.example.ptut.padc_harecare.model.HealthCareInfoModel

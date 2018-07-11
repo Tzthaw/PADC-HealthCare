@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
+import android.support.v4.content.res.ResourcesCompat
 import android.support.v7.app.AppCompatActivity
 import android.webkit.WebViewClient
 import com.example.ptut.padc_harecare.R
@@ -23,12 +25,10 @@ class WebViewActivity : AppCompatActivity() {
 
         val url = intent.getStringExtra(EXTRA_URL)
         webView.webViewClient = WebViewClient()
-        toolbarTitle.text = url.toString()
-
         setSupportActionBar(toolbar)
 
-        val upArrow: Drawable = resources.getDrawable(R.drawable.ic_arrow_back)
-        upArrow.setColorFilter(resources.getColor(R.color.white), PorterDuff.Mode.SRC_ATOP)
+        val upArrow:Drawable= ContextCompat.getDrawable(this@WebViewActivity, R.drawable.ic_arrow_back)!!
+        upArrow.setColorFilter( ResourcesCompat.getColor(resources, R.color.white, null), PorterDuff.Mode.SRC_ATOP)
 
         supportActionBar!!.setHomeAsUpIndicator(upArrow)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

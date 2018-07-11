@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin_medium">
@@ -211,8 +210,7 @@
             android:layout_marginStart="@dimen/margin_medium"
             android:drawablePadding="@dimen/margin_medium"
             android:drawableStart="@drawable/ic_share"
-            android:drawableTint="@color/belizehole"
-            android:text="5302"
+            android:text="@string/_5302"
             android:textColor="@color/silver" />
 
         <TextView
@@ -221,10 +219,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_medium"
             android:layout_marginStart="@dimen/margin_medium"
-            android:drawableLeft="@drawable/ic_comment"
+            android:drawableStart="@drawable/ic_comment"
             android:drawablePadding="@dimen/margin_medium"
-            android:drawableTint="@color/belizehole"
-            android:text="229"
+            android:text="@string/_229"
             android:textColor="@color/silver" />
 
         <TextView
@@ -233,10 +230,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_medium"
             android:layout_marginStart="@dimen/margin_medium"
-            android:drawableLeft="@drawable/ic_like"
+            android:drawableStart="@drawable/ic_like"
             android:drawablePadding="@dimen/margin_medium"
-            android:drawableTint="@color/belizehole"
-            android:text="56"
+            android:text="@string/_56"
             android:textColor="@color/silver" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

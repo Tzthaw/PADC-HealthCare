@@ -4,12 +4,11 @@ import android.arch.persistence.room.TypeConverter
 import com.example.ptut.padc_harecare.persistence.entities.Author
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import java.util.*
-import java.util.Collections.emptyList
+
 
 
 class AuthorTypeConverter {
-    var gson = Gson()
+    private var gson = Gson()
 
     @TypeConverter
     fun stringToSomeObjectList(data: String?): Author {

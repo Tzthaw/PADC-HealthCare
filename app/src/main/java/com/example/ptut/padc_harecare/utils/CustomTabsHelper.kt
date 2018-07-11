@@ -16,9 +16,7 @@ package com.example.ptut.padc_harecare.utils
 
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.content.pm.ResolveInfo
 import android.net.Uri
 import android.text.TextUtils
 import android.util.Log
@@ -29,13 +27,13 @@ import java.util.ArrayList
  * Helper class for Custom Tabs.
  */
 object CustomTabsHelper {
-    private val TAG = "CustomTabsHelper"
-    internal val STABLE_PACKAGE = "com.android.chrome"
-    internal val BETA_PACKAGE = "com.chrome.beta"
-    internal val DEV_PACKAGE = "com.chrome.dev"
-    internal val LOCAL_PACKAGE = "com.google.android.apps.chrome"
-    private val EXTRA_CUSTOM_TABS_KEEP_ALIVE = "android.support.customtabs.extra.KEEP_ALIVE"
-    private val ACTION_CUSTOM_TABS_CONNECTION = "android.support.customtabs.action.CustomTabsService"
+    private const val TAG = "CustomTabsHelper"
+    internal const val STABLE_PACKAGE = "com.android.chrome"
+    internal const val BETA_PACKAGE = "com.chrome.beta"
+    internal const val DEV_PACKAGE = "com.chrome.dev"
+    internal const val LOCAL_PACKAGE = "com.google.android.apps.chrome"
+    private const val EXTRA_CUSTOM_TABS_KEEP_ALIVE = "android.support.customtabs.extra.KEEP_ALIVE"
+    private const val ACTION_CUSTOM_TABS_CONNECTION = "android.support.customtabs.action.CustomTabsService"
 
     private var sPackageNameToUse: String? = null
 

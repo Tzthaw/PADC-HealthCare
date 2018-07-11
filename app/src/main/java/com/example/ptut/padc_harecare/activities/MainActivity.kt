@@ -5,8 +5,8 @@ import android.arch.lifecycle.ViewModelProviders
 import android.net.Uri
 import android.os.Bundle
 import android.support.customtabs.CustomTabsIntent
+import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.Toast
 import com.example.ptut.padc_harecare.R
 import com.example.ptut.padc_harecare.activities.base.BaseActivity
 import com.example.ptut.padc_harecare.adapter.HealthCareInfoAdapter
@@ -16,6 +16,7 @@ import com.example.ptut.padc_harecare.persistence.entities.HealthcareInfoItem
 import com.example.ptut.padc_harecare.utils.CustomTabActivityHelper
 import com.example.ptut.padc_harecare.utils.WebviewFallback
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_item.*
 
 class MainActivity : BaseActivity(),HealthCareInfoView {
 
@@ -44,5 +45,7 @@ class MainActivity : BaseActivity(),HealthCareInfoView {
                 this@MainActivity, customTabsIntent, Uri.parse(s), WebviewFallback())
     }
 
-
+    override fun onChanged(t: String?) {
+        Snackbar.make(view, t.toString(),Snackbar.LENGTH_SHORT)
+    }
 }

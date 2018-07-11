@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">PADC-HareCare</string>
+    <string name="app_name">PADC-HealthCare</string>
     <string name="action_settings">Settings</string>
+    <string name="featured">Featured</string>
+    <string name="fourm">Fourm</string>
+    <string name="feedback">Feedback</string>
+    <string name="_5302">5302</string>
+    <string name="_229">229</string>
+    <string name="_56">56</string>
 </resources>
