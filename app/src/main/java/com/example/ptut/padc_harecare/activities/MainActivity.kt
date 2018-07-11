@@ -26,9 +26,9 @@ class MainActivity : BaseActivity(),HealthCareInfoView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        healthPresenter=ViewModelProviders.of(this).get(HealthCarePresenter::class.java)
-        healthPresenter.initPresenter(this)
-        healthPresenter.errorLD.observe(this,this)
+        healthPresenter=ViewModelProviders.of(this@MainActivity).get(HealthCarePresenter::class.java)
+        healthPresenter.initPresenter(this@MainActivity)
+        healthPresenter.errorLD.observe(this@MainActivity,this@MainActivity)
 
         healthAdapter= HealthCareInfoAdapter(applicationContext, healthPresenter)
         healthCareRecycler.layoutManager=LinearLayoutManager(applicationContext)
@@ -41,7 +41,7 @@ class MainActivity : BaseActivity(),HealthCareInfoView {
     override fun lunchCompleteUrl(s: String) {
         val customTabsIntent = CustomTabsIntent.Builder().build()
         CustomTabActivityHelper.openCustomTab(
-                this, customTabsIntent, Uri.parse(s), WebviewFallback())
+                this@MainActivity, customTabsIntent, Uri.parse(s), WebviewFallback())
     }
 
 

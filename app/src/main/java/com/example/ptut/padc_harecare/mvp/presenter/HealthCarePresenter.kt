@@ -1,6 +1,5 @@
 package com.example.ptut.padc_harecare.mvp.presenter
 
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import com.example.ptut.padc_harecare.deligate.TapItem
 import com.example.ptut.padc_harecare.model.HealthCareInfoModel
@@ -9,7 +8,7 @@ import com.example.ptut.padc_harecare.persistence.entities.HealthcareInfoItem
 
 class HealthCarePresenter : BasePresenter<HealthCareInfoView>(),TapItem {
 
-    var mHealthCareLD: MutableLiveData<List<HealthcareInfoItem>>?=null
+    private var mHealthCareLD: MutableLiveData<List<HealthcareInfoItem>>?=null
 
     override fun initPresenter(mView: HealthCareInfoView) {
         super.initPresenter(mView)
@@ -21,7 +20,7 @@ class HealthCarePresenter : BasePresenter<HealthCareInfoView>(),TapItem {
         get() = mHealthCareLD!!
 
     override fun onTapItem(s: String?) {
-        mView!!.lunchCompleteUrl(s!!);
+        mView!!.lunchCompleteUrl(s!!)
     }
 
 

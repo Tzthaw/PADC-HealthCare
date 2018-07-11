@@ -8,16 +8,11 @@ import com.example.ptut.padc_harecare.persistence.daos.HealthCareDao
 import com.example.ptut.padc_harecare.persistence.entities.Author
 import com.example.ptut.padc_harecare.persistence.entities.HealthcareInfoItem
 
-@Database(entities = arrayOf(HealthcareInfoItem::class), version =1, exportSchema = false)
+@Database(entities = [(HealthcareInfoItem::class)], version =1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
-
     abstract fun healthcareInfo(): HealthCareDao
-
     companion object {
-
-
         private var INSTANCE: AppDatabase? = null
-
         fun getDatabase(context: Context): AppDatabase {
             if (INSTANCE == null) {
                 INSTANCE = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java)

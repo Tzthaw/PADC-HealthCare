@@ -1,4 +1,4 @@
-package com.padcmyanmar.mmnews.kotlin.components
+package com.example.ptut.padc_harecare.component
 
 import android.content.Context
 import android.util.AttributeSet

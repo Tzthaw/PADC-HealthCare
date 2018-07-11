@@ -9,6 +9,6 @@ import retrofit2.http.POST
 interface HealthCareService {
     @FormUrlEncoded
     @POST("GetHealthcareInfo.php")
-    abstract fun getHealthCareInfo(@Field("access_token") access_token: String): Observable<GetHealthCareInfoResponse>
+    fun getHealthCareInfo(@Field("access_token") access_token: String): Observable<GetHealthCareInfoResponse>
 
 }
