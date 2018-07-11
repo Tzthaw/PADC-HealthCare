@@ -39,6 +39,7 @@ class HealthCareInfoModel private constructor(context: Context) : BaseModel(cont
                     }
 
                     override fun onSubscribe(d: Disposable) {
+                        errorLD.value="$d"
                     }
 
                     override fun onError(e: Throwable) {

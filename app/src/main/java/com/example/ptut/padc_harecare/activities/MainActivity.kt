@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.customtabs.CustomTabsIntent
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.Toast
 import com.example.ptut.padc_harecare.R
 import com.example.ptut.padc_harecare.activities.base.BaseActivity
 import com.example.ptut.padc_harecare.adapter.HealthCareInfoAdapter
@@ -31,6 +32,7 @@ class MainActivity : BaseActivity(),HealthCareInfoView {
         healthPresenter.initPresenter(this@MainActivity)
         healthPresenter.errorLD.observe(this@MainActivity,this@MainActivity)
 
+        healthCareRecycler.setEmptyView(emptyLayout)
         healthAdapter= HealthCareInfoAdapter(applicationContext, healthPresenter)
         healthCareRecycler.layoutManager=LinearLayoutManager(applicationContext)
         healthCareRecycler.adapter=healthAdapter
@@ -46,6 +48,6 @@ class MainActivity : BaseActivity(),HealthCareInfoView {
     }
 
     override fun onChanged(t: String?) {
-        Snackbar.make(view, t.toString(),Snackbar.LENGTH_SHORT)
+        super.onChanged(t)
     }
 }
