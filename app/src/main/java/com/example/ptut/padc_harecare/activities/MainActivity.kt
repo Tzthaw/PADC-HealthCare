@@ -44,4 +44,5 @@ class MainActivity : BaseActivity(),HealthCareInfoView {
                 this, customTabsIntent, Uri.parse(s), WebviewFallback())
     }
 
+
 }
