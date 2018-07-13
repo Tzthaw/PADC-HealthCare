@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.ptut.padc_harecare.component.EmptyViewPod xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.ptut.healthcare.component.EmptyViewPod xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ededed">
@@ -26,4 +26,4 @@
         />
 
 
-</com.example.ptut.padc_harecare.component.EmptyViewPod>
+</com.example.ptut.healthcare.component.EmptyViewPod>

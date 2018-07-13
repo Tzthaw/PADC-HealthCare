@@ -18,6 +18,7 @@
         <item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="cardViewStyle">@style/CardView</item>
+
     </style>
 
 </resources>

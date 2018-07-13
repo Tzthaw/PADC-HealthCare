@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.example.ptut.padc_harecare"
+        applicationId "com.example.ptut.healthcare"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1

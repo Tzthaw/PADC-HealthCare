@@ -15,18 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/toolbarTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="serif"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_regular_3x"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="135dp"
-            tools:layout_editor_absoluteY="15dp" />
     </android.support.v7.widget.Toolbar>
 
     <WebView
