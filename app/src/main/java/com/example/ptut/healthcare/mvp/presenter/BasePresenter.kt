@@ -7,11 +7,11 @@ import com.example.ptut.healthcare.mvp.view.BaseView
 
 abstract class BasePresenter<T : BaseView> : ViewModel() {
 
-    protected var mView: T?=null
-    private var mErrorLD: MutableLiveData<String>?=null
+    protected lateinit var mView: T
+    private lateinit var mErrorLD: MutableLiveData<String>
 
     val errorLD: MutableLiveData<String>
-        get() = mErrorLD!!
+        get() = mErrorLD
 
     open fun initPresenter(mView: T) {
         this.mView = mView

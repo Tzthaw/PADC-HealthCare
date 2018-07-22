@@ -116,7 +116,7 @@
         android:layout_marginTop="16dp"
         android:gravity="start"
         android:singleLine="true"
-        android:textColor="@color/md_500_bluegrey"
+        android:textColor="@color/colorPrimary"
         android:textSize="@dimen/text_regular_3x"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

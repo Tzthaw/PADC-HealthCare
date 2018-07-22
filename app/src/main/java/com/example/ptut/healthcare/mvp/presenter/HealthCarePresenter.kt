@@ -9,19 +9,28 @@ import com.example.ptut.healthcare.persistence.entities.HealthcareInfoItem
 
 class HealthCarePresenter : BasePresenter<HealthCareInfoView>(),TapItem {
 
-    private var mHealthCareLD: MutableLiveData<List<HealthcareInfoItem>>?=null
+    private lateinit var mHealthCareLD: MutableLiveData<List<HealthcareInfoItem>>
 
     override fun initPresenter(mView: HealthCareInfoView) {
         super.initPresenter(mView)
         mHealthCareLD = MutableLiveData()
-        HealthCareInfoModel.getInstance().getHealthCareInfoItem(mHealthCareLD!!, errorLD)
+
+    }
+
+    fun onNotifyFinishSetup(){
+        HealthCareInfoModel.getInstance().getHealthCareInfoItem(mHealthCareLD, errorLD)
+    }
+
+    fun onForceRefresh(){
+        HealthCareInfoModel.getInstance().getHealthCareInfoItem(mHealthCareLD, errorLD)
     }
 
     val healthcareLD: MutableLiveData<List<HealthcareInfoItem>>
-        get() = mHealthCareLD!!
+        get() = mHealthCareLD
+
 
     override fun onTapItem(s: String?) {
-        mView!!.lunchCompleteUrl(s!!)
+        mView.lunchCompleteUrl(s!!)
     }
 
 

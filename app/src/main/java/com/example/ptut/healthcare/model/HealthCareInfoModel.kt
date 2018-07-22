@@ -1,5 +1,6 @@
 package com.example.ptut.healthcare.model
 
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.content.Context
 import com.example.ptut.healthcare.model.base.BaseModel
@@ -26,7 +27,6 @@ class HealthCareInfoModel private constructor(context: Context) : BaseModel(cont
         }
     }
     init {
-
     }
     fun getHealthCareInfoItem(mHealthLD: MutableLiveData<List<HealthcareInfoItem>>, errorLD: MutableLiveData<String>) {
         mTheApi.getHealthCareInfo(AppConstants.access_token)
@@ -34,22 +34,26 @@ class HealthCareInfoModel private constructor(context: Context) : BaseModel(cont
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object : Observer<GetHealthCareInfoResponse> {
                     override fun onNext(getHealthCarInfoResponse: GetHealthCareInfoResponse) {
-                        mTheDB.healthcareInfo().insertAll(getHealthCarInfoResponse.healthcareInfo!!)
-                        mHealthLD.value = getHealthCarInfoResponse.healthcareInfo
+                        if(getHealthCarInfoResponse != null && getHealthCarInfoResponse.healthcareInfo!!.isNotEmpty()){
+                            saveInfoData(getHealthCarInfoResponse.healthcareInfo!!)
+                            mHealthLD.value = getHealthCarInfoResponse.healthcareInfo
+                        }else{
+                            errorLD.value="Null from Response"
+                        }
                     }
-
-                    override fun onSubscribe(d: Disposable) {
-//                        errorLD.value="$d"
-                    }
-
+                    override fun onSubscribe(d: Disposable) {}
                     override fun onError(e: Throwable) {
                         errorLD.value = e.message
                     }
-
-                    override fun onComplete() {
-                    }
+                    override fun onComplete() {}
                 })
     }
 
+    fun getAllInfo():List<HealthcareInfoItem>{
+        return mTheDB.healthcareInfo().getAllInfo()
+    }
 
+    fun saveInfoData(healthCareInfoList:List<HealthcareInfoItem>){
+        mTheDB.healthcareInfo().insertAll(healthCareInfoList)
+    }
 }

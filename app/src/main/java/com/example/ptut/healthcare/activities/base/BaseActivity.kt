@@ -13,11 +13,7 @@ open class BaseActivity : AppCompatActivity(), Observer<String> {
     override fun onChanged(t: String?) {
         displayMessage(t)
     }
-
      private fun displayMessage(t: String?) {
-
          Toast.makeText(this,t, Toast.LENGTH_SHORT).show()
     }
-
-
 }
