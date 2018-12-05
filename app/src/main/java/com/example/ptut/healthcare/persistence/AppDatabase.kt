@@ -13,9 +13,10 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun healthcareInfo(): HealthCareDao
     companion object {
         private var INSTANCE: AppDatabase? = null
+
         fun getDatabase(context: Context): AppDatabase {
             if (INSTANCE == null) {
-                INSTANCE = Room.databaseBuilder(context, AppDatabase::class.java,AppConstants.DB_NAME)
+                return Room.databaseBuilder(context, AppDatabase::class.java,AppConstants.DB_NAME)
                         .allowMainThreadQueries()
                         .build()
             }

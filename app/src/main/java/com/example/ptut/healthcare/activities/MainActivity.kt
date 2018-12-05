@@ -9,19 +9,19 @@ import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import com.example.ptut.healthcare.R
 import com.example.ptut.healthcare.activities.base.BaseActivity
-import com.example.ptut.healthcare.adapter.HealthCareInfoAdapter
 import com.example.ptut.healthcare.mvp.presenter.HealthCarePresenter
 import com.example.ptut.healthcare.mvp.view.HealthCareInfoView
 import com.example.ptut.healthcare.persistence.entities.HealthcareInfoItem
 import com.example.ptut.healthcare.utils.CustomTabActivityHelper
 import com.example.ptut.healthcare.utils.WebviewFallback
+import com.mmgoogleexpert.ptut.listitemcodelab.adapters.HealthAdapter
 import com.padcmyanmar.mmnews.kotlin.components.SmartScrollListener
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(),HealthCareInfoView {
 
     private lateinit var healthPresenter: HealthCarePresenter
-    private lateinit var healthAdapter: HealthCareInfoAdapter
+    private lateinit var healthAdapter: HealthAdapter
     private var mSmartScrollListener: SmartScrollListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +38,7 @@ class MainActivity : BaseActivity(),HealthCareInfoView {
 
         //initial setup for adapter
         healthCareRecycler.setEmptyView(emptyLayout)
-        healthAdapter= HealthCareInfoAdapter(applicationContext, healthPresenter)
+        healthAdapter= HealthAdapter()
         healthCareRecycler.layoutManager=LinearLayoutManager(applicationContext)
 
         //List end reach loading more data
@@ -55,7 +55,7 @@ class MainActivity : BaseActivity(),HealthCareInfoView {
         healthPresenter.healthcareLD.observe(this, Observer<List<HealthcareInfoItem>> {
             healthcareInfoItems ->
             swipeRefreshLayout.isRefreshing=false
-            healthAdapter.setNewData(healthcareInfoItems as MutableList<HealthcareInfoItem>) })
+            healthAdapter.submitList(healthcareInfoItems as MutableList<HealthcareInfoItem>) })
 
         //Pull to refresh data
         swipeRefreshLayout.setOnRefreshListener {
